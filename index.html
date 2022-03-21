@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planet to Living Room</title>
+    <!-- <link rel="stylesheet" href="style.css"/> -->
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left-col">
+        <img src="images/logo.png" class="logo" />
+        <div class="content">
+          <h1>Indoor Plants Decor Living Room</h1>
+          <p>
+            Your living room is the perfect spot for indoor plants! Use plants
+            to create a natural mood in your living room. Houseplants come with
+            a variety of light requirements, so I'm sure you can find one to
+            fit!
+          </p>
+          <button type="button">LEARN MORE</button>
+        </div>
+      </div>
+      <div class="right-col">
+        <div class="slider">
+          <img src="images/pic-1.jpg" id="Slider" />
+        </div>
+        <div class="slider-content">
+          <h2>Indoor Plants Decor Living Room Ideas</h2>
+          <hr />
+          <p>
+            Your living room is the perfect spot for indoor plants! Use plants
+            to<br />
+            create a natural mood in your living room. Houseplants come with
+            <br />
+            a variety of light requirements, so I'm sure you can find one to
+            fit!
+          </p>
+
+          <div class="controller">
+            <img src="images/back.png" id="BackBtn" />
+            <div class="vertical-line"></div>
+            <img src="images/next.png" id="NextBtn" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var Slider = document.getElementById('Slider');
+      var BackBtn = document.getElementById('BackBtn');
+      var NextBtn = document.getElementById('NextBtn');
+
+      var sliderimages = new Array(
+        'images/pic-1.jpg',
+        'images/pic-2.jpg',
+        'images/pic-3.jpg',
+        'images/pic-4.jpg'
+      );
+      let i = 0;
+
+      NextBtn.onclick = function () {
+        if (i > 2) i = -1;
+        Slider.src = sliderimages[i + 1];
+        i++;
+      };
+      BackBtn.onclick = function () {
+        if (i <= 0) {
+          i = 3;
+          Slider.src = sliderimages[i];
+        } else {
+          Slider.src = sliderimages[i - 1];
+          i--;
+        }
+      };
+    </script>
+  </body>
+</html>
